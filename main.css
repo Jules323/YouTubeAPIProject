@@ -1,0 +1,57 @@
+* {
+	box-sizing: border-box;
+}
+
+body, a {
+	display: block;
+}
+
+body {
+	max-width: 1000px;
+	min-width: 650px;
+	font-family: helvetica, sans-serif;
+}
+
+.container {
+	background: url("images/youTubeWatermark.png") no-repeat fixed 50% center;
+	width: 75%;
+	margin-left: 100px;
+	padding: 40px 0 200px 0;
+}
+
+form, a {
+	margin-top: 20px;
+}
+
+form {
+	padding-bottom: 30px;
+}
+
+img {
+	margin-top: 10px;
+}
+
+fieldset, legend {
+	display: none;
+}
+
+.js-thumbnail {
+	width: 45%;
+}
+
+.js-page {
+	display: inline-block;
+}
+
+.js-page-number, .js-next-page {
+	margin-left: 45px;
+}
+
+
+
+
+
+
+
+
+

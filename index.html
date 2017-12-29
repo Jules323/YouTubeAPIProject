@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>YouTubeAPI</title>
+	<meta charset="UTF-8">
+	<meta name="viewpoint" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href="lity.css" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		
+		<main role="main">
+			<div class="js-search">
+				<h1>Search YouTube for a video</h1>
+					<form class="js-search-form">
+					<fieldset>video search</fieldset>
+
+						<legend>video search</legend>
+						<label for="query"></label>
+						<input type="text" class="js-query" placeholder="e.g. Newcastle United" required>
+						<button type="submit" class="js-search-btn">Search</button>
+					</form>
+			</div>
+		</main>
+
+		<section role="region">
+			<div id="results" class="js-search-results">
+					
+			</div>	
+		</section>
+
+	</div>
+		<script src="index.js"></script>
+		<script src="lity.js"></script>
+</body>
+</html>
