@@ -1,5 +1,6 @@
 const youtube_API_URL = 'https://www.googleapis.com/youtube/v3/search';
 let searchItem = "" ;
+let pageNumber = null;
 
 //query set up
 function getApiData(nextToken, searchString, callback) {
@@ -28,7 +29,11 @@ function generateResultStrings(result) {
 //maps results to html
 function displayData(data) {
 	const results = data.items.map((item) => generateResultStrings(item));
-	results.push(`<a class="js-page js-prev-page" href="${data.prevPageToken}">PREV PAGE</a>`,`<span class="js-page js-page-number">page ${pageNumber}</span>`,`<a class="js-page js-next-page" href="${data.nextPageToken}">NEXT PAGE</a>`);
+		if (pageNumber >=2) {
+		results.push(`<a class="js-page js-prev-page" href="${data.prevPageToken}">PREV PAGE</a>`);
+	}
+		results.push(`<span class="js-page js-page-number">page ${pageNumber}</span>`);
+		results.push(`<a class="js-page js-next-page" href="${data.nextPageToken}">NEXT PAGE</a>`);
 	$('.js-search-results').html(results);
 }
 
@@ -37,7 +42,6 @@ function handleSubmit() {
 	$(".js-search-form").submit( function(event) {
 		event.preventDefault();
 		console.log('handleSubmit ran')
-		pageNumber= null;
 		pageNumber++;
 		const searchTarget = $(event.currentTarget).find('.js-query');
 		searchItem = searchTarget.val();
@@ -69,7 +73,7 @@ function prevPage() {
 function appAPI() {
 	handleSubmit();
 	nextPage();
-  prevPage();
+  	prevPage();
 }
 
 
