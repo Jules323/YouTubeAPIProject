@@ -42,7 +42,7 @@ function handleSubmit() {
 	$(".js-search-form").submit( function(event) {
 		event.preventDefault();
 		console.log('handleSubmit ran')
-		pageNumber++;
+		pageNumber = 1;
 		const searchTarget = $(event.currentTarget).find('.js-query');
 		searchItem = searchTarget.val();
 		console.log(searchItem);
